@@ -3,7 +3,12 @@ const container = document.getElementById('homePage');
   
     function expandOptions() {
       container.classList.add('active');
-        if (window.innerWidth > 768) {
+        const screenWidth = window.innerWidth;
+  
+  if (screenWidth > 768) {
+    container.classList.add('active');
+  } else {
+    container.style.flexDirection = 'column';
     container.classList.add('active');
   }
     }
