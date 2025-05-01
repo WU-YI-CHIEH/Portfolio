@@ -3,7 +3,7 @@ const container = document.getElementById('homePage');
   
     function expandOptions() {
       container.classList.add('active');
-        const screenWidth = window.innerWidth;
+      const screenWidth = window.innerWidth;
   
   if (screenWidth > 768) {
     container.classList.add('active');
