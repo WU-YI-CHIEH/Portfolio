@@ -1,0 +1,372 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-image: url(./IMAGE/contentsbg.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: "Noto Serif TC", serif;
+  overflow: hidden;
+}
+
+/* ========== Header ========== */
+header {
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+  padding: 20px 0 0;
+  padding-top: 8%;
+  animation: fadeIn 3s ease;
+}
+
+/* ========== 主選單容器 ========== */
+.container {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 80px);
+}
+
+/* ========== 選項卡樣式 ========== */
+.option {
+  position: absolute;
+  width: 80%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 10%;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.opt1 { z-index: 10; top: 0; }
+.opt2 { z-index: 9; top: 10px; opacity: 0.4; }
+.opt3 { z-index: 8; top: 20px; opacity: 0.3; }
+.opt4 { z-index: 7; top: 30px; opacity: 0.2; }
+
+/* ========== 選項 Hover 效果 ========== */
+.opt1:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%) scale(1.05);
+  z-index: 11;
+}
+
+/* 修改點：用容器 active 狀態來控制子項 hover 效果 */
+.container.active .opt2:hover,
+.container.active .opt3:hover,
+.container.active .opt4:hover {
+  transform: scale(1.05);
+  z-index: 11;
+}
+
+.container.active .opt2:hover { background: rgba(255, 200, 200, 0.3); transform: translate(-50%, 100px) scale(1.05); }
+.container.active .opt3:hover { background: rgba(200, 255, 200, 0.3); transform: translate(-50%, 200px) scale(1.05); }
+.container.active .opt4:hover { background: rgba(200, 200, 255, 0.3); transform: translate(-50%, 300px) scale(1.05); }
+
+/* 選單展開狀態動畫 */
+.container.active .opt2 { transform: translate(-50%, 100px); opacity: 1; }
+.container.active .opt3 { transform: translate(-50%, 200px); opacity: 1; }
+.container.active .opt4 { transform: translate(-50%, 300px); opacity: 1; }
+
+/* 選單收起動畫 */
+.container.hide {
+  transform: translateX(-100%);
+  transition: transform 0.6s ease-in-out;
+}
+
+/* ========== 子頁面統一樣式 ========== */
+.content-page {
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  right: 70px;
+  bottom: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 99;
+}
+
+/* ========== 滑入滑出動畫 ========== */
+.content-page.slide-in {
+  animation: slideIn 0.6s ease forwards;
+}
+.content-page.slide-out {
+  animation: slideOut 0.6s ease forwards;
+}
+
+/* ========== 回上頁按鈕 ========== */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  backdrop-filter: blur(4px);
+}
+
+/* ========== 文字樣式 ========== */
+.lead { 
+  font-size: 24px; 
+  font-weight: bold; }
+
+.leadd{
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 12%;
+}
+p, .ppp {
+  font-size: 20px;
+  animation: fadeIn 5s ease;
+}
+h1, .pp {
+  font-size: 36px;
+}
+
+/* ========== ABOUT 內容區塊 ========== */
+.about-wrapper,
+.about-wrapperr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 30px;
+}
+.about-wrapperr {
+  margin-top: 60px;
+}
+.about-wrapper {
+  margin-top: 20px;
+}
+
+.about-text {
+  flex: 1;
+  color: white;
+  line-height: 1.6;
+  text-align: left;
+  padding-left: 30px;
+}
+
+/* ========== 圖片樣式（合併 img1~3）========== */
+.img1, .img2, .img3 {
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.img1 { height: 80%; width: 50%; max-width: 50%; flex-shrink: 0; }
+.img2 { height: 50%; width: auto; max-width: 50%; margin-top: 30px; }
+.img3 { height: 80%; width: auto; max-width: 50%; flex-shrink: 0; }
+
+.img1:hover, .img2:hover, .img3:hover {
+  filter: grayscale(0%);
+}
+
+/* ========== 子頁面 slide 效果 ========== */
+.content-subpage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  padding: 40px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+.subpage-in { animation-name: flipIn; }
+.subpage-out { animation-name: flipOut; }
+
+/* ========== 響應式設計 ========== */
+@media (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .img1, .img2, .img3 {
+    max-width: 90%;
+    height: auto;
+  }
+  .about-text {
+    padding: 0;
+    text-align: center;
+  }
+}
+
+/* ========== 動畫定義 ========== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0%); }
+}
+@keyframes slideOut {
+  from { opacity: 1; transform: translateX(0%); }
+  to { opacity: 0; transform: translateX(100%); }
+}
+@keyframes flipIn {
+  from { transform: rotateY(90deg); opacity: 0; }
+  to { transform: rotateY(0deg); opacity: 1; }
+}
+@keyframes flipOut {
+  from { transform: rotateY(0deg); opacity: 1; }
+  to { transform: rotateY(-90deg); opacity: 0; }
+}
+@keyframes shake-horizontal {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+/* ========== shake 效果 ========== */
+.shake-on-load {
+  animation: shake-horizontal 1s ease;
+}
+
+/* ========== 分頁按鈕 ========== */
+.prev-btn, .next-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  backdrop-filter: blur(4px);
+  position: fixed;
+  bottom: 20px;
+  height: 40px;
+  line-height: 24px;
+}
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* ========== 各頁面容器 ID 統一結構 ========== */
+#websitePagesContainer, #webPage1,
+#gamePagesContainer, #gamePage1,
+#elsePage1, #aboutPage1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#webPage2, #gamePage2, #elsePage2, #elsePage3, #aboutPage2 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#elsePage1, #elsePage3 {
+  cursor: pointer;
+}
+
+
+/* ========== 圖片點擊式樣式 ========== */
+#WEBSITEImage, #WEBSITEImage2,
+#GAMEImage1, #GAMEImage2 {
+  max-width: 80%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* ========== icon 區塊 ========== */
+.iconss {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.icon {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.icon:hover {
+  box-shadow: 0 0 100px white;
+  transform: scale(1.05);
+}
+.icons {
+  padding: 50px 0;
+  margin: 0 40px;
+}
+.iicon {
+  width: 100px;
+  background: rgb(138, 138, 138);
+}
+.iiicon {
+  width: 60px;
+  height: 60px;
+}
+.iiiicon {
+  width: 45px;
+  height: 45px;
+}
+
+#elsePage3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;
+}
+
+#elsePage3 .img2 {
+  width: 100%;
+  max-width: 600px; 
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: filter 0.4s ease;
+  filter: grayscale(100%);
+}
+
+#elsePage3 .img2:hover {
+  filter: grayscale(0%);
+}
+
+.else-text-wrapper {
+  max-width: 70%; 
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.elsePage {
+  display: none;
+}
+.gamefont{
+  margin-top: 10px;
+}

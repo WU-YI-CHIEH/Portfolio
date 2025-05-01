@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="HOME.css">
+</head>
+<body>
+  <header><p class="pp">Portfolio</p1></header>
+
+  <!-- 首頁 -->
+  <div class="container" id="homePage">
+    <div class="option opt1" onmouseenter="expandOptions()" onclick="goToPage('opt1')"><p>ABOUT ME</p></div>
+    <div class="option opt2" onclick="goToPage('opt2')"><p>WEBSITE</p></div>
+    <div class="option opt3" onclick="goToPage('opt3')"><p>GAME</p></div>
+    <div class="option opt4" onclick="goToPage('opt4')" ><p>ELSE</p></div>
+  </div>
+
+  <!-- ABOUT ME分頁 -->
+  <div class="content-page" id="opt1Page">
+    <button class="back-btn" onclick="goHome()">⇦</button>
+    <h1>ABOUT ME</h1>
+  
+    <!--  ABOUT ME第一分頁 -->
+    <div id="aboutPage1">
+      <div class="about-wrapperr">
+        <div class="about-text">
+          <p class="lead">Hi! I'm Wu Yi Chieh.</p>
+          <br>
+          <p class="ppp">I am currently a junior majoring in Information Communication Technology at Yuan Ze University.</p2>
+          <br>
+          <pclass="ppp">Recently, I have been learning front-end web design and enjoy immersing myself in web development.</p2>
+          <br>
+          <pclass="ppp">I hope to gain more relevant knowledge through internship experiences.</p2>
+        </div>
+        <img class="img1" src=".//IMAGE/me2.jpg" alt="portrait" />
+      </div>
+      <button class="next-btn" style="top: auto; bottom: 20px;" onclick="goToAboutPage(2)">▶︎</button>   
+    </div>
+  
+    <!-- ABOUT ME第二分頁 -->
+    <div id="aboutPage2" >
+      <div class="about-wrapperr">
+        <div class="about-text">
+          <p class="leadd">Programming</p>
+          <br>
+          <div class="iconss">
+          <div class="icons"><img class="icon" src=".//IMAGE/html.png" alt=""></div>
+            <div class="icons"><img class="icon" src=".//IMAGE/css.png" alt=""></div>
+            <div class="icons"><img class="icon" src=".//IMAGE/java.png" alt=""></div>
+            <div class="icons"> <img class="icon" src=".//IMAGE/javascript.png" alt=""></div>
+                <div class="icons"> <img class="icon" src=".//IMAGE/c++.png" alt=""></div>
+                    <div class="icons"> <img class="icon" src=".//IMAGE/csh.png" alt=""></div>
+                        <div class="icons"><img class="icon" src=".//IMAGE/c.png" alt="">
+            </div>
+        </div>
+          
+          <p class="leadd">Computer skills</p>
+          <br>
+          <div class="iconss">
+            <div class="icons"><img class="icon" src=".//IMAGE/visual.png" alt=""></div>
+              <div class="icons"><img class="icon" src=".//IMAGE/figma.png" alt=""></div>
+              <div class="icons"><img class="icon" src=".//IMAGE/unity.png" alt=""></div>
+              <div class="icons"> <img class="icon iicon" src=".//IMAGE/android.png" alt=""></div>
+                  <div class="icons"> <img class="icon iiicon" src=".//IMAGE/ps.png" alt=""></div>
+                      <div class="icons"> <img class="icon iiiicon" src=".//IMAGE/pr.png" alt=""></div>
+                          <div class="icons"><img class="icon" src=".//IMAGE/ai.png" alt=""></div>
+          </div>
+          
+        </div>
+      </div>
+      <button class="back-btn" style="top: auto; bottom: 20px;" onclick="goToAboutPage(1)">◀</button>
+    </div>
+  </div>
+<!--WEBSITE分頁-->
+  <div class="content-page" id="opt2Page">
+    <button class="back-btn" onclick="goHome()">⇦</button>
+    <h1>WEBSITE</h1>
+  
+    <div id="websitePagesContainer">
+
+      <!--WEBSITE第一分頁-->
+      <div id="webPage1" >
+        <img class="img2" id="WEBSITEImage" src=".//IMAGE/浪生命不斷線.png" alt="Website 1" onclick="cycleImage('WEBSITEImage')">
+        <p style="text-align: center; margin-top:20px" >此網頁為下拉一頁式前端網頁，流浪動物捐款之使用者可以透過此網
+        頁了解流浪動物個案，並選擇捐贈方式來</p>
+        <p>幫流浪動物。網頁功能為影片播放、錨點、跳轉和表單等，為基礎入門的網頁設計專案。</p>
+        <button class="next-btn" style="top: auto; bottom: 20px;" onclick="goToWebsitePage(2)">▶︎</button>
+      </div>
+      <!--WEBSITE第二分頁-->
+      <div id="webPage2">
+        <img class="img2" id="WEBSITEImage2" src=".//IMAGE/悼源圖.png" alt="Website 1" onclick="cycleImage('WEBSITEImage2')">
+        <p style="text-align: center; margin-top:10px">此網頁為寵物水化之互動式前端網頁，背景為動態水流式特效，使用者可以透過互動式問答了解寵物水化是什麼、</p>
+        <p style="text-align: center;">水化的流程及有關水化的小知識，並依據使用者需求提供禮儀服務及線上追思功能。網頁功能為輪播圖、錨點、
+        <p style="text-align: center;">跳轉、互動式問答和表單等，使用HTML/CSS打造響應式排版與視覺風格，並透過JavaScript增加互動性與動畫效果，</p>
+        <p style="text-align: center;">最後結合jQuery簡化DOM操作與事件處理，打造視覺美觀且使用者友善的網站。</p>
+        <button class="back-btn" style="top: auto; bottom: 20px;" onclick="goToWebsitePage(1)">◀</button>
+      </div>
+    </div>
+  </div>
+<!--GAME分頁-->
+<div class="content-page" id="opt3Page">
+    <button class="back-btn" onclick="goHome()">⇦</button>
+    <h1>GAME</h1>
+    <div id="gamePagesContainer" >
+      <!--GAME第一分頁-->
+        <div id="gamePage1" >
+            <img id="GAMEImage1" class="img2"  src=".//IMAGE/馬力歐.png" alt="Website 1">
+            <p style="text-align: center;margin-top:10px">此遊戲為致敬經典《Super Mario》的小型平台跳躍遊戲，玩家將操控馬力歐在關卡中前進，並盡可能收集</p>
+            <p style="text-align: center;">金幣、避開障礙與敵人。遊戲使用Unity開發，實作2D平台遊戲核心機制，包括Rigidbody2D物理運算、</p>
+            <p style="text-align: center;">碰撞偵測與動畫控制。遊戲設計了敵人、計分系統與關卡進度判定，並透過Unity的Tilemap系統打造遊戲場景。</p>
+          <button class="next-btn" onclick="goToGamePage(2)">▶︎</button>
+        </div>
+        <!--GAME第二分頁-->
+        <div id="gamePage2" >
+            <img id="GAMEImage2" class="img2"  src=".//IMAGE/有購急.png" alt="Website 1" onclick="cycleImage('GAMEImage2')">
+            <p style="text-align: center;" class="gamefont">此遊戲為一款使用Unity開發的模擬購物遊戲，玩家以第三人稱視角使用鍵盤之WASD操控小孩，</p>
+            <p style="text-align: center;">空白鍵拿取貨物，在貨架中來回穿梭並在時間內完成被指派的購物清單，以獲得零用金。遊戲破關後會</p>
+            <p style="text-align: center;">進入下一關，且難度會稍微提升，可建立小孩的金錢購物觀念及操控反應力。</p>
+            <button class="back-btn" style="top: auto; bottom: 20px;" onclick="goToGamePage(1)">◀</button>
+        </div>
+      </div>
+  </div>
+
+
+<!--ELSE分頁-->
+
+  <div class="content-page" id="opt4Page">
+    <button class="back-btn" onclick="goHome()">⇦</button>
+    <h1>ELSE</h1>
+
+    <!--ELSE第一分頁-->
+    <div id="elsePage1">
+    <div class="about-wrapper">
+        <div class="about-text" style="padding-left:100px ;">
+           <p>此應用程式為一款自製濾鏡應用程式，使用Android Studio開發，</p>
+           <p>使用者可使用此應用程式選取或拍攝照片並自行調色，將調整</p>
+            <p>好的濾鏡參數儲存在個人帳號中，供下次快速套用。</p>
+        </div>
+        <img id="ELSEImage" class="img3" src=".//IMAGE/onion.png" alt="portrait"onclick="cycleImage('ELSEImage')" />
+    </div>
+          <button class="next-btn" onclick="goToElsePage(2)">▶︎</button>
+    </div>
+
+<!--ELSE第一分頁-->
+        <div id="elsePage2" >
+            <div class="about-wrapper" style="padding-top: 20px;">
+                <div class="about-text" style="padding-left:100px ;">
+                   <p>此應用程式為使用者介面設計課程之實作，時空背景設定為2050年，主題為</p>
+                   <p>聽團愛好者可能會喜歡的聽團應用程式。此應用程式的功能包括社群平台、</p>
+                    <p>串流歌曲播放、好友配對和虛擬音樂祭等。介面設計選擇賽博龐克風格，</p>
+                    <p>搭配腦波感測系統，呈現未來科技的走向。</p>
+                </div>
+                <img class="img3" src=".//IMAGE/meetune.png" alt="portrait" />
+            </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="prev-btn" onclick="goToElsePage(1)">◀</button>
+            <button class="next-btn" onclick="goToElsePage(3)">▶︎</button>
+          </div>
+        </div>
+
+<!--ELSE第一分頁-->
+        <div id="elsePage3" class="content-wrapper">
+          <div class="image-link-wrapper">
+            <a href="https://www.youtube.com/watch?v=CA1dU_0e4tA" target="_blank">
+              <img class="img2" src="./IMAGE/紀錄片1.png" alt="Website 1">
+            </a>
+          </div>
+          <div class="else-text-wrapper">
+            <p>《無悔的選擇》這部短紀錄片記錄滇緬族人的歷史故事，講述在異地生活的他們</p>
+            <p>是如何紮根。藉由採訪阿美米干店，阿美姐的妹妹——福英姐，去了解第二代族人</p>
+            <p>是如何面對新世代的挑戰，做出無悔的選擇，並利用米干店將這份家鄉的傳統延續下去。</p>
+          </div>
+          <button class="prev-btn" onclick="goToElsePage(2)">◀</button>
+        </div>
+      </div>
+  </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
