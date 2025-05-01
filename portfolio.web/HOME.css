@@ -31,6 +31,7 @@ header {
   left: 0;
   width: 100%;
   height: calc(100% - 80px);
+  padding-top: 40px; /* 增加間距，讓按鈕向下移 */
 }
 
 /* ========== 選項卡樣式 ========== */
@@ -50,6 +51,7 @@ header {
   cursor: pointer;
   left: 50%;
   transform: translateX(-50%);
+  margin-top: 30px; /* 增加每個按鈕的間距 */
 }
 
 .opt1 { z-index: 10; top: 0; }
