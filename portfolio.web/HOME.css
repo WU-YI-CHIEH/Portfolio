@@ -26,32 +26,21 @@ header {
 
 /* ========== 主選單容器 ========== */
 .container {
-  position: absolute;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 80px);
-  padding-top: 40px; /* 增加間距，讓按鈕向下移 */
+  display: flex;
+    flex-direction: column; /* 讓選單改為直列顯示 */
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-top: 40px;
 }
 
 /* ========== 選項卡樣式 ========== */
 .option {
-  position: absolute;
-  width: 80%;
-  max-width: 400px;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 20px;
-  margin-top: 10%;
-  text-align: center;
-  color: white;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  cursor: pointer;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 30px; /* 增加每個按鈕的間距 */
+  position: relative; /* 取消 `absolute` 讓它們能夠自然排列 */
+    width: 90%;
+    max-width: 280px;
+    margin: 15px 0; /* 增加間距，避免按鈕疊在一起 */
+    text-align: center;
 }
 
 .opt1 { z-index: 10; top: 0; }
