@@ -205,17 +205,45 @@ h1, .pp {
 
 /* ========== 響應式設計 ========== */
 @media (max-width: 768px) {
-  .about-wrapper {
+  body {
+    overflow-y: auto; /* 允許滾動 */
+  }
+  .container {
+    display: flex;
     flex-direction: column;
-    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-top: 20px;
+  }
+  .option {
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  .about-wrapper, .about-wrapperr {
+    flex-direction: column;
+    text-align: center;
   }
   .img1, .img2, .img3 {
-    max-width: 90%;
+    width: 90%;
     height: auto;
+    max-width: 100%;
   }
   .about-text {
     padding: 0;
     text-align: center;
+  }
+  .content-page {
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+    padding: 20px;
+  }
+  .back-btn, .prev-btn, .next-btn {
+    font-size: 12px;
+    padding: 6px 10px;
   }
 }
 
