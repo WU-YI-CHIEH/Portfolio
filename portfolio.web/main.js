@@ -3,6 +3,14 @@ const container = document.getElementById('homePage');
   
     function expandOptions() {
       container.classList.add('active');
+        const screenWidth = window.innerWidth;
+  
+  if (screenWidth > 768) {
+    container.classList.add('active');
+  } else {
+    container.style.flexDirection = 'column';
+    container.classList.add('active');
+  }
     }
   
     container.addEventListener('mouseleave', () => {
