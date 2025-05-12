@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="HOME.css">
 </head>
 <body>
-  <header><p class="pp">Portfolio</p1></header>
+  <header><p class="pp">Portfolio</p></header>
 
   <!-- 首頁 -->
   <div class="container" id="homePage">
@@ -24,15 +24,19 @@
   
     <!--  ABOUT ME第一分頁 -->
     <div id="aboutPage1">
-      <div class="about-wrapperr">
+      <div class="about-wrapper">
         <div class="about-text">
           <p class="lead">Hi! I'm Wu Yi Chieh.</p>
           <br>
-          <p class="ppp">I am currently a junior majoring in Information Communication Technology at Yuan Ze University.</p2>
+          <p class="ppp">I am currently a junior majoring in Information Communication </p>
           <br>
-          <pclass="ppp">Recently, I have been learning front-end web design and enjoy immersing myself in web development.</p2>
+          <p class="ppp">Technology at Yuan Ze University.</p>
           <br>
-          <pclass="ppp">I hope to gain more relevant knowledge through internship experiences.</p2>
+          <p class="ppp">Recently, I have been learning front-end web design and enjoy </p>
+          <br>
+          <p class="ppp">immersing myself in web development.</p>
+          <br>
+          <p class="ppp">I hope to gain more relevant knowledge through internship experiences.</p>
         </div>
         <img class="img1" src=".//IMAGE/me2.jpg" alt="portrait" />
       </div>
@@ -41,31 +45,32 @@
   
     <!-- ABOUT ME第二分頁 -->
     <div id="aboutPage2" >
-      <div class="about-wrapperr">
-        <div class="about-text">
-          <p class="leadd">Programming</p>
-          <br>
-          <div class="iconss">
-          <div class="icons"><img class="icon" src=".//IMAGE/html.png" alt=""></div>
-            <div class="icons"><img class="icon" src=".//IMAGE/css.png" alt=""></div>
-            <div class="icons"><img class="icon" src=".//IMAGE/java.png" alt=""></div>
-            <div class="icons"> <img class="icon" src=".//IMAGE/javascript.png" alt=""></div>
-                <div class="icons"> <img class="icon" src=".//IMAGE/c++.png" alt=""></div>
-                    <div class="icons"> <img class="icon" src=".//IMAGE/csh.png" alt=""></div>
-                        <div class="icons"><img class="icon" src=".//IMAGE/c.png" alt="">
-            </div>
-        </div>
+      <div class="about-wrapper">
+        <!-- <div class="icon"> -->
+        <!-- <div class="about-text"> -->
+        <div class="icon-content">
+        <p class="ti">Programming</p>
+        <br>
+          <div class="icon-row">
+            <img class="icon" src=".//IMAGE/html.png" alt="">
+            <img class="icon" src=".//IMAGE/css.png" alt="">
+            <img class="icon" src=".//IMAGE/java.png" alt="">
+            <img class="icon" src=".//IMAGE/javascript.png" alt="">
+            <img class="icon" src=".//IMAGE/c++.png" alt="">
+            <img class="icon" src=".//IMAGE/csh.png" alt="">
+            <img class="icon" src=".//IMAGE/c.png" alt="">
+          </div>
           
-          <p class="leadd">Computer skills</p>
+          <p class="ti">Computer skills</p>
           <br>
-          <div class="iconss">
-            <div class="icons"><img class="icon" src=".//IMAGE/visual.png" alt=""></div>
-              <div class="icons"><img class="icon" src=".//IMAGE/figma.png" alt=""></div>
-              <div class="icons"><img class="icon" src=".//IMAGE/unity.png" alt=""></div>
-              <div class="icons"> <img class="icon iicon" src=".//IMAGE/android.png" alt=""></div>
-                  <div class="icons"> <img class="icon iiicon" src=".//IMAGE/ps.png" alt=""></div>
-                      <div class="icons"> <img class="icon iiiicon" src=".//IMAGE/pr.png" alt=""></div>
-                          <div class="icons"><img class="icon" src=".//IMAGE/ai.png" alt=""></div>
+          <div class="icon-row">
+            <img class="icon" src=".//IMAGE/visual.png" alt="">
+            <img class="icon" src=".//IMAGE/figma.png" alt="">
+            <img class="icon" src=".//IMAGE/unity.png" alt="">
+            <img class="icon iicon" src=".//IMAGE/android.png" alt="">
+            <img class="icon iiicon" src=".//IMAGE/ps.png" alt="">
+            <img class="icon" src=".//IMAGE/pr.png" alt="">
+            <img class="icon" src=".//IMAGE/ai.png" alt="">
           </div>
           
         </div>
@@ -73,6 +78,7 @@
       <button class="back-btn" style="top: auto; bottom: 20px;" onclick="goToAboutPage(1)">◀</button>
     </div>
   </div>
+
 <!--WEBSITE分頁-->
   <div class="content-page" id="opt2Page">
     <button class="back-btn" onclick="goHome()">⇦</button>
@@ -133,24 +139,24 @@
     <!--ELSE第一分頁-->
     <div id="elsePage1">
     <div class="about-wrapper">
-        <div class="about-text" style="padding-left:100px ;">
-           <p>此應用程式為一款自製濾鏡應用程式，使用Android Studio開發，</p>
-           <p>使用者可使用此應用程式選取或拍攝照片並自行調色，將調整</p>
-            <p>好的濾鏡參數儲存在個人帳號中，供下次快速套用。</p>
+        <div class="about-text1" style="padding: 5%;">
+          <p>此應用程式為一款自製濾鏡應用程式，使用Android Studio開發，</p>
+          <p>使用者可使用此應用程式選取或拍攝照片並自行調色，將調整</p>
+          <p>好的濾鏡參數儲存在個人帳號中，供下次快速套用。</p>
         </div>
         <img id="ELSEImage" class="img3" src=".//IMAGE/onion.png" alt="portrait"onclick="cycleImage('ELSEImage')" />
     </div>
           <button class="next-btn" onclick="goToElsePage(2)">▶︎</button>
     </div>
 
-<!--ELSE第一分頁-->
+<!--ELSE第二分頁-->
         <div id="elsePage2" >
-            <div class="about-wrapper" style="padding-top: 20px;">
-                <div class="about-text" style="padding-left:100px ;">
-                   <p>此應用程式為使用者介面設計課程之實作，時空背景設定為2050年，主題為</p>
-                   <p>聽團愛好者可能會喜歡的聽團應用程式。此應用程式的功能包括社群平台、</p>
-                    <p>串流歌曲播放、好友配對和虛擬音樂祭等。介面設計選擇賽博龐克風格，</p>
-                    <p>搭配腦波感測系統，呈現未來科技的走向。</p>
+            <div class="about-wrapper" style="padding-top: 20px; padding: 6%;">
+                <div class="about-text1">
+                  <p>此應用程式為使用者介面設計課程之實作，時空背景設定為2050年，主題為</p>
+                  <p>聽團愛好者可能會喜歡的聽團應用程式。此應用程式的功能包括社群平台、</p>
+                  <p>串流歌曲播放、好友配對和虛擬音樂祭等。介面設計選擇賽博龐克風格，</p>
+                  <p>搭配腦波感測系統，呈現未來科技的走向。</p>
                 </div>
                 <img class="img3" src=".//IMAGE/meetune.png" alt="portrait" />
             </div>
@@ -160,7 +166,7 @@
           </div>
         </div>
 
-<!--ELSE第一分頁-->
+<!--ELSE第三分頁-->
         <div id="elsePage3" class="content-wrapper">
           <div class="image-link-wrapper">
             <a href="https://www.youtube.com/watch?v=CA1dU_0e4tA" target="_blank">
