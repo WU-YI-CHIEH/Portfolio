@@ -5,11 +5,12 @@
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-image: url(./IMAGE/contentsbg.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   font-family: "Noto Serif TC", serif;
   overflow: hidden;
 }
@@ -26,23 +27,23 @@ header {
 
 /* ========== 主選單容器 ========== */
 .container {
-  position: absolute;
-  top: 80px;
+  position: fixed;
+  top: 20%;
   left: 0;
   width: 100%;
-  height: calc(100% - 80px);
+  height: 80%;
 }
 
 /* ========== 選項卡樣式 ========== */
 .option {
   position: absolute;
-  width: 80%;
-  max-width: 400px;
+  width: 100%;
+  max-width: 30%;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 20px;
-  margin-top: 10%;
+  margin-top: 5%;
   text-align: center;
   color: white;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -90,15 +91,15 @@ header {
 /* ========== 子頁面統一樣式 ========== */
 .content-page {
   position: absolute;
-  top: 70px;
-  left: 70px;
-  right: 70px;
-  bottom: 70px;
+  top: 8%;
+  left: 8%;
+  right: 8%;
+  bottom: 8%;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   color: white;
   border-radius: 20px;
-  padding: 40px;
+  padding: 3%;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -133,13 +134,8 @@ header {
   font-size: 24px; 
   font-weight: bold; }
 
-.leadd{
-  font-size: 24px;
-  font-weight: bold;
-  margin-left: 12%;
-}
 p, .ppp {
-  font-size: 20px;
+  font-size: 16px;
   animation: fadeIn 5s ease;
 }
 h1, .pp {
@@ -147,29 +143,33 @@ h1, .pp {
 }
 
 /* ========== ABOUT 內容區塊 ========== */
-.about-wrapper,
-.about-wrapperr {
+.about-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  gap: 30px;
-}
-.about-wrapperr {
-  margin-top: 60px;
-}
-.about-wrapper {
-  margin-top: 20px;
+  width: 90%;
+  height: 70%;
+  margin-top: 5%;
+  position: fixed;
 }
 
 .about-text {
   flex: 1;
   color: white;
+  line-height: 1.5;
+  width: 50%;
+  text-align: left;
+  white-space: nowrap;
+}
+.about-text1 {
+  flex: 1;
+  color: white;
   line-height: 1.6;
   text-align: left;
-  padding-left: 30px;
+  white-space: nowrap; /* 不自動換行，文字會超出容器 */
+  overflow: hidden;    /* 隱藏溢出部分 */
+  text-overflow: ellipsis; /* 用省略號表示溢出 */ 
 }
 
 /* ========== 圖片樣式（合併 img1~3）========== */
@@ -187,65 +187,6 @@ h1, .pp {
   filter: grayscale(0%);
 }
 
-/* ========== 子頁面 slide 效果 ========== */
-.content-subpage {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  padding: 40px;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  animation-duration: 0.6s;
-  animation-fill-mode: forwards;
-}
-.subpage-in { animation-name: flipIn; }
-.subpage-out { animation-name: flipOut; }
-
-/* ========== 響應式設計 ========== */
-@media (max-width: 768px) {
-  body {
-    overflow-y: auto; /* 允許滾動 */
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    padding-top: 20px;
-  }
-  .option {
-    width: 90%;
-    max-width: 300px;
-    margin-bottom: 20px;
-  }
-  .about-wrapper, .about-wrapperr {
-    flex-direction: column;
-    text-align: center;
-  }
-  .img1, .img2, .img3 {
-    width: 90%;
-    height: auto;
-    max-width: 100%;
-  }
-  .about-text {
-    padding: 0;
-    text-align: center;
-  }
-  .content-page {
-    left: 10px;
-    right: 10px;
-    top: 10px;
-    bottom: 10px;
-    padding: 20px;
-  }
-  .back-btn, .prev-btn, .next-btn {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-}
 
 /* ========== 動畫定義 ========== */
 @keyframes fadeIn {
@@ -329,38 +270,43 @@ h1, .pp {
 }
 
 /* ========== icon 區塊 ========== */
-.iconss {
+.icon-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  gap: 5%; /* 行與行之間的間距 */
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 80%;
+}
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 15%; /* icon 之間的間距 */
+}
+.ti{
+  font-size: 24px;
+  font-weight: bold;
+  /* margin-left: 5%; */
 }
 .icon {
   width: 50px;
   height: 50px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .icon:hover {
   box-shadow: 0 0 100px white;
   transform: scale(1.05);
 }
-.icons {
-  padding: 50px 0;
-  margin: 0 40px;
-}
+
 .iicon {
-  width: 100px;
+  width: 20%;
   background: rgb(138, 138, 138);
 }
-.iiicon {
-  width: 60px;
-  height: 60px;
-}
-.iiiicon {
-  width: 45px;
-  height: 45px;
-}
+
+
 
 #elsePage3 {
   display: flex;
@@ -388,13 +334,61 @@ h1, .pp {
 }
 
 .else-text-wrapper {
-  max-width: 70%; 
+  max-width: 75%; 
+  width: 100%;
   padding: 0 20px;
   margin: 0 auto;
+  white-space: nowrap; /* 不自動換行，文字會超出容器 */
+  overflow: hidden;    /* 隱藏溢出部分 */
+  text-overflow: ellipsis; /* 用省略號表示溢出 */
 }
 .elsePage {
   display: none;
 }
 .gamefont{
   margin-top: 10px;
+}
+
+/* ========== 響應式設計 ========== */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto; /* 允許滾動 */
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-top: 20px;
+  }
+  .option {
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  .about-wrapper, .about-wrapperr {
+    flex-direction: column;
+    text-align: center;
+  }
+  .img1, .img2, .img3 {
+    width: 90%;
+    height: auto;
+    max-width: 100%;
+  }
+  .about-text {
+    padding: 0;
+    text-align: center;
+  }
+  .content-page {
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+    padding: 20px;
+  }
+  .back-btn, .prev-btn, .next-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
 }
