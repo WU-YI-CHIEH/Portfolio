@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上追思</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #55b6f7, #c2e9fb,rgb(24, 208, 249));
+        animation: animateBG 6s ease infinite;
+        background-size: 200%;
+        overflow: hidden;
+        font-family: "Noto Serif TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    @keyframes animateBG{
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+    @keyframes fadeIn{
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    h1{
+        font-size: 40px;
+        color: #125ea1;
+        margin-right: 20px;
+    }
+    nav{
+        height: 10%;
+        width: 100%;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        padding:0px 20px; 
+    }
+    .navItem01{
+        display: flex;
+        align-items: center;
+    }
+    a{
+        margin-left: 60px;
+        text-decoration: none;
+        color: #125ea1;
+        display: flex;
+        align-items: center;
+        height: 100%;   
+        padding: 10px 20px;
+    }
+    a:hover{
+        background-color: white;
+    }
+    #first{
+        margin-left: auto;
+    }
+        .container {
+            width: 50%;
+            height: 65%;
+            max-width: 800px;
+            margin-left: 25%;
+            margin-top: 5%;
+            background-color: #fff;
+            padding: 50px;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-in;
+        }
+        #h11 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-group input[type="file"] {
+            padding: 0;
+        }
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-buttons button {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .reset-button {
+            background-color: #d9534f;
+            color: #fff;
+        }
+        .reset-button:hover {
+            background-color: #c9302c;
+        }
+        .submit-button {
+            background-color: #5cb85c;
+            color: #fff;
+        }
+        .submit-button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <nav>
+            <div class="navItem01">
+                <h1>悼源</h1>
+                <img src="./Image/LOGO.png" alt="" height="100px" width="100px">
+            </div>
+            <a id="first" href="./index.html">首頁</a>
+            <a href="./QA.html">水化科普</a>
+            <a href="./new.html">禮儀服務</a>
+            <a href="./form.html">線上追思</a>
+        </nav>
+    </div>
+    <div class="container">
+        <h1 id="h11">提供線上追思</h1>
+        <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="pet-name">寶貝姓名</label>
+                <input type="text" id="pet-name" name="pet_name" placeholder="輸入寶貝姓名" required>
+            </div>
+            <div class="form-group">
+                <label for="pet-photo">上傳寶貝照片</label>
+                <input type="file" id="pet-photo" name="pet_photo" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="pet-memory">回憶寶貝</label>
+                <textarea id="pet-memory" name="pet_memory" placeholder="回憶寶貝" required></textarea>
+            </div>
+            
+        
+            <div class="form-group form-buttons">
+                <button type="reset" class="reset-button">重新填寫</button>
+                <button type="submit" class="submit-button">確認送出</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const petName = document.getElementById('pet-name').value;
+            const petMemory = document.getElementById('pet-memory').value;
+            const petPhoto = document.getElementById('pet-photo').files[0];
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const petPhotoData = e.target.result;
+                localStorage.setItem('pet_name', petName);
+                localStorage.setItem('pet_memory', petMemory);
+                localStorage.setItem('pet_photo', petPhotoData);
+                window.location.href = 'result.html';
+            };
+            reader.readAsDataURL(petPhoto);
+        }
+    </script>
+</body>
+</html>

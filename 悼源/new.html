@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禮儀服務</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="./_js/jquery.min.js"></script>
+    <script src="./_js/jquery-ui.min.js"></script>
+    <style>
+        *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #55b6f7, #c2e9fb,rgb(24, 208, 249));
+        animation: animateBG 6s ease infinite;
+        background-size: 200%;
+        overflow: hidden;
+        font-family: "Noto Serif TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    @keyframes animateBG{
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+    @keyframes fadeIn{
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    h1{
+        font-size: 40px;
+        color: #125ea1;
+        margin-right: 20px;
+    }
+    nav{
+        height: 10%;
+        width: 100%;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        padding:0px 20px; 
+    }
+    .navItem01{
+        display: flex;
+        align-items: center;
+    }
+    a{
+        margin-left: 60px;
+        text-decoration: none;
+        color: #125ea1;
+        display: flex;
+        align-items: center;
+        height: 100%;   
+        padding: 10px 20px;
+    }
+    a:hover{
+        background-color: white;
+    }
+    #first{
+        margin-left: auto;
+    }
+    .container{
+    width: 50%;
+    height: 45%;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+    justify-content: center; 
+    align-items: center;
+    animation: fadeIn 1s ease-in;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+    }
+    table{
+        border-collapse: collapse;
+    }
+    td{
+        padding: 10px;
+    }
+
+        #carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        #carousel {
+            display: flex;
+            transition: transform 1s ease;
+        }
+
+        .pet {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 30px;
+            margin-left: 30px;
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+
+        .selected {
+            transform: scale(1.9);
+            z-index: 1;
+            opacity: 1;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+
+        .pet img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: #125ea1;
+        }
+        h3,span{
+            color: #125ea1;
+            font-size: 1.17em;
+            font-weight: bold;
+        }
+        .arrow {
+            font-size: 3rem;
+            color: #0000008a;
+            border: 2px solid #0000008a;
+            background-color: transparent; 
+            padding: 10px;
+            cursor: pointer; 
+            border-radius: 10px; 
+        }
+        #confirm-button {
+            display: block;
+            margin: auto;
+            margin-top: 40px;
+            padding: 13px 40px; 
+            font-size: 20px; 
+            border-radius: 30px;
+            color: white;
+            border: 2px solid rgb(38, 164, 227);
+            background-color: rgb(38, 164, 227);
+        }
+        button:hover {
+            background-color: #f0f0f0; 
+        }
+        #confirm-button:active {
+            background-color: #606060; 
+        }
+        #main-content{
+        width: 100%;
+        height: 80%;
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        animation: fadeIn 1s ease-in;
+        }
+
+        .option-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 500px; 
+            height: 300px;
+            background-color: #f8f8f8;
+            margin-left: 35%;
+            font-size: 24px;
+            border-radius: 10px;
+            margin-top: 50px;  
+        }
+        .option{
+            color: white;
+            background-color: #5FA2B0; 
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            width: 350px;
+            margin-left: 60px;
+        }
+        #next-button, #back-page, #submit, #confirmButton,#payButton {
+            display: block;
+            margin-top: 40px;
+            margin-left: 150px;
+            width: 200px;
+            padding: 10px 40px; 
+            font-size: 20px; 
+            border-radius: 10px; 
+            color: white;
+            border: 2px solid rgb(38, 164, 227);
+            background-color: rgb(38, 164, 227);
+        }
+        #next-button:active,#back-page:active,#submit:active,#confirmButton:active,#payButton:active {
+            background-color: #606060; 
+        }
+        #back-page, #submit,#confirmButton {
+            display: inline-block;
+        }
+        #wash-container {
+            display: flex;
+        }
+        
+        #main-image1,#main-image2,#main-image3 {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-left: 40%;
+            margin-top: 40px;
+
+        }
+        
+        .option-images {
+            display: flex;
+            justify-content:center;
+            width: 100%;
+        }
+        
+        .option-image {
+            width: 120px;
+            height: 120px;
+            border: 1px;
+            background-color: white;
+            border-radius: 50%;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        .option-image:hover {
+            background-color: #e3e0e0; 
+        }
+        #h11 {
+            text-align: center;
+            color: white;
+        }
+        #selected-pet-name{
+            margin-top: 50px;
+        }
+
+        #price-list-link {
+            position: absolute;
+            padding: 10px;
+            cursor: pointer; 
+            right: 10%;
+            top: 21%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            width: 230px;
+        }
+        
+        #price-list {
+            position: absolute;
+            right: 10%;
+            top: 31%; 
+            width: 230px; 
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            visibility: hidden;
+            border-radius: 10px;
+        }
+        
+        #explain {
+            background-color: #f9f9f9; 
+        }
+        #done-container{
+            padding-top: 20px;
+            padding-left: 20px;
+            height: 350px;
+        }
+        .ui-datepicker {
+            background-color: #f2f2f2;
+            width: 700px;
+        }
+        #payButton{
+            margin-top: 20px;
+            margin-left: 500px;
+            width: 180px;
+        }
+        #confirmButton{
+            margin-left: 500px;
+            width: 180px;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <div class="navItem01">
+                <h1>悼源</h1>
+                <img src="./Image/LOGO.png" alt="" height="100px" width="100px">
+            </div>
+            <a id="first" href="./index.html">首頁</a>
+            <a href="./QA.html">水化科普</a>
+            <a href="./new.html">禮儀服務</a>
+            <a href="./form.html">線上追思</a>
+        </nav>
+    </div>
+    <!-- 1選要不要 -->
+    <div id="container" >
+        <h2>選擇喪葬服務選項</h2>
+        <div class="option-block">
+            <div class="option">
+                <input type="radio" id="option1" name="option" checked>
+                <label for="option1">我需要禮儀服務</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="option2" name="option">
+                <label for="option2">我不需要禮儀服務</label>
+            </div>
+            <button id="next-button">下一步</button>
+        </div>
+        <div id="price-list-link"><h3 style="text-align: center;">價目表</h3></div>
+        <div id="price-list" class="tooltip">
+            <h3 style="color: black;">價目表</h3>
+            <table>
+                <tr>
+                    <td>10公斤以下</td>
+                    <td>$3000</td>
+                </tr>
+                <tr>
+                    <td>20公斤以下</td>
+                    <td>$4000</td>
+                </tr>
+                <tr>
+                    <td>30公斤以下</td>
+                    <td>$5000</td>
+                </tr>
+                <tr>
+                    <td>31公斤以上</td>
+                    <td>$7000</td>
+                </tr>
+                <tr>
+                    <td>特寵2公斤以下</td>
+                    <td>不加價</td>
+                </tr>
+                <tr>
+                    <td>額外服務</td>
+                    <td><p>洗澡、修剪$100</p><p>修復<p>$200</p></p></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <!-- 2選種類 -->
+    <div id="main-content" style="display: none;" >
+        <h2>選擇你的寵物類型</h2>
+        <h2 id="selected-pet-name"></h2>
+        <div id="carousel-container">
+            <button id="left-arrow" class="arrow"><</button>
+            <div id="carousel">
+                <div class="pet" id="mouse" data-pet-name="鼠類"><img src="./Image/mouse.jpg"></div>
+                <div class="pet" id="cat" data-pet-name="貓"><img src="./Image/cat.jpg"></div>
+                <div class="pet selected" id="dog" data-pet-name="狗"><img src="./Image/dog.jpg"></div>
+                <div class="pet" id="bird" data-pet-name="鳥類"><img src="./Image/bird.jpg"></div>
+                <div class="pet" id="rabbit" data-pet-name="兔子"><img src="./Image/rabbit.jpg"></div>
+            </div>
+            <button id="right-arrow" class="arrow">></button>
+        </div>
+        <button id="confirm-button">選擇</button>
+    </div>
+
+    <!--3寵物個資表單-->
+    <div id="form-container" class="container" style="display: none;">
+        <form name="peeet" id="peeet">
+            <h2 id="pet-type" style="padding-top: 10px;"></h2>
+            <table>
+                <tr>
+                    <td>姓名</td>
+                    <td><input type="text" name="Username" id="Username" size="50" placeholder="Name" required></td>
+                </tr>
+
+                <tr>
+                    <td>品種</td>
+                    <td><input type="text" name="Usertype" id="Usertype" size="50" placeholder="Breed" ></td>
+                </tr>
+                <tr>
+                    <td>重量</td>
+                    <td>
+                        <input type="text" name="kg" id="kg" list="kgg">
+                        <datalist id="kgg">
+                            <option value="" selected>請選擇</option>
+                            <option value="10kg以下">10kg以下</option>
+                            <option value="20kg以下">20kg以下</option>
+                            <option value="30kg以下">30kg以下</option>
+                            <option value="30kg以上">30kg以上</option>
+                            <option value="特寵2kg以下">特寵2kg以下</option>
+                        </datalist>
+                    </td>
+                </tr>
+                <tr>
+                    <td>選擇預約時間</td>
+                    <td><input type="text" name="date" id="date" size="30"></td>
+                </tr>
+                <tr>
+                    <td>備註</td>
+                    <td>
+                        <textarea name="more" id="more" cols="40" rows="5">
+                        </textarea>
+                    </td>
+                </tr>
+                
+            </table>
+            <button id="back-page" >上一頁</button>
+            <button id="submit" >確認</button>                
+        </form>
+
+    </div>
+
+    <!-- 4洗澡 -->
+    <div  id="wash-container" style="display: none;" >
+        <img id="main-image1" src="./Image/dog.jpg" class="main-image"/>    
+        <div class="option-images">
+            <div>
+                <h1 id="h11">洗澡</h1>
+                <img id="bath-option" src="./Image/bath.png" class="option-image"/>
+            </div>
+            <div>
+                <h1 id="h11">不洗澡</h1>
+                <img id="no-option1" src="./Image/no.png" class="option-image"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5修剪 -->
+    <div  id="cut-container" style="display: none;" >
+        <img id="main-image2" src="./Image/dog.jpg" class="main-image"/>    
+        <div class="option-images">
+            <div>
+                <h1 id="h11">修剪</h1>
+                <img id="cut-option" src="./Image/cut.jpg" class="option-image"/>
+            </div>
+            <div>
+                <h1 id="h11">不修剪</h1>
+                <img id="no-option2" src="./Image/no.png" class="option-image"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6修復 -->
+    <div  id="hurt-container" style="display: none;" >
+        <img id="main-image3" src="./Image/dog.jpg" class="main-image"/>    
+        <div class="option-images">
+            <div>
+                <h1 id="h11">修復</h1>
+                <img id="hurt-option" src="./Image/hurt.png" class="option-image"/>
+            </div>
+            <div>
+                <h1 id="h11">不修復</h1>
+                <img id="no-option3" src="./Image/no.png" class="option-image"/>
+            </div>
+        </div>
+        <div id="explain" style="display: none;" title="什麼是大體修復 ?">
+            <p>大體修復是指通過各種技術，修復已故寵物的外觀，包括修復皮膚損傷、縫合傷口、處理毛髮、修復面部特徵等，已呈現寵物的最佳狀態，讓家人在告別時感到安心。</p>
+        </div>
+    </div>
+
+    <!-- 統計 -->
+    <div id="done-container" class="container" style="display: none;">
+        
+    </div>
+
+    <!-- 結帳 -->
+    <div id="pay-container" class="container" style="display: none;">
+        <form name="pay" id="pay">
+            <h2 style="padding-top: 10px;">付款資料(僅提供信用卡付款)</h2>   
+            <table>
+                <tr>
+                    <td>卡號</td>
+                    <td><input type="text" name="cardnumber" id="cardnumber" size="50" placeholder="卡號"></td>
+                </tr>
+
+                <tr>
+                    <td>持卡人姓名</td>
+                    <td><input type="text" name="cardname" id="cardname" size="50" placeholder="持卡人姓名" ></td>
+                </tr>
+                <tr>
+                    <td>有效期</td>
+                    <td><input type="text" name="carddate" id="carddate" size="5" placeholder="有效期(MM/YY)" style="width: 200px;"></td>
+                </tr>
+                <tr>
+                    <td>安全碼</td>
+                    <td><input type="text" name="cardcode" id="cardcode" size="3" placeholder="安全碼" style="width: 100px;"></td>
+                </tr>
+            </table>
+            <h3 id="money" style="margin-left: 10px; margin-top: 20px;"></h3>
+            <button id="confirmButton" >確認</button>                
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let price = 0;
+            const carousel = document.getElementById('carousel');
+            let pets = Array.from(document.querySelectorAll('.pet'));
+            let currentIndex = 2; 
+            let selectedPet = pets[currentIndex].getAttribute('data-pet-name').toLowerCase();
+
+            let cutOptionSelected = false; 
+            let noWashOptionSelected = false;
+            
+            //重制預約日期
+            // 讀取已預約日期
+            const bookedDates = JSON.parse(localStorage.getItem('bookedDates')) || [];
+            
+            $( "#date" ).datepicker({
+                dateFormat: 'yy-mm-dd',
+                beforeShowDay: function(date) {
+                    var string = $.datepicker.formatDate('yy-mm-dd', date);
+                    return [ !bookedDates.includes(string), '', bookedDates.includes(string) ? 'reserved-date' : '' ];
+                }
+            });
+
+
+            let petName;
+            function updatePets() {
+                pets.forEach((pet, index) => {
+                    pet.classList.remove('selected');
+                    if (index === currentIndex) {
+                        pet.classList.add('selected');
+                        pet.style.transition = 'transform 0.5s ease'; 
+                    } else {
+                        pet.style.transition = ''; 
+                    }
+                });
+                const offset = -100 * (currentIndex - 1) + 100; 
+                carousel.style.transform = `translateX(${offset}px)`;
+                let selectedPetElement = document.querySelector('.pet.selected');
+                if (selectedPetElement) {
+                    petName = selectedPetElement.getAttribute('data-pet-name');
+                    document.getElementById('selected-pet-name').textContent = petName;
+                    document.getElementById('pet-type').textContent = '輸入寶貝的基本資料('+petName+')';
+                    selectedPet = selectedPetElement.id; 
+                }
+            }
+
+            function moveLeft() {
+                let firstPet = pets.shift(); 
+                pets.push(firstPet); 
+                carousel.appendChild(carousel.firstElementChild); 
+                updatePets();
+            }
+
+            function moveRight() {
+                let lastPet = pets.pop(); 
+                pets.unshift(lastPet); 
+                carousel.insertBefore(carousel.lastElementChild, carousel.firstElementChild); 
+                updatePets();
+            }
+
+            document.getElementById('left-arrow').addEventListener('click', () => {
+                moveLeft();
+            });
+
+            document.getElementById('right-arrow').addEventListener('click', () => {
+                moveRight();
+            });
+
+            updatePets();
+            // 選擇是否需要禮儀服務//1->2
+            document.getElementById('next-button').addEventListener('click', function() {
+                if (document.getElementById('option1').checked) {
+                    document.getElementById('container').style.display = 'none';
+                    document.getElementById('main-content').style.display = 'block';
+                } else if (document.getElementById('option2').checked) {
+                    window.location.href = './index.html'; 
+                }
+            });
+            //價目表顯示
+            document.getElementById('price-list-link').addEventListener('mouseover', function() {
+                document.getElementById('price-list').style.visibility = 'visible';
+                document.getElementById('price-list-link').style.backgroundColor = '#e3e0e0';
+            });
+            document.getElementById('price-list-link').addEventListener('mouseout', function() {
+                document.getElementById('price-list').style.visibility = 'hidden';
+                document.getElementById('price-list-link').style.backgroundColor = '#f9f9f9';
+            });
+
+            //2->3
+            document.getElementById('confirm-button').addEventListener('click', function () {
+                document.getElementById('main-content').style.display = 'none';
+                document.getElementById('form-container').style.display = 'block';
+            });
+
+            //3->2
+            document.getElementById('back-page').addEventListener('click', function () {
+                document.getElementById('form-container').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            });
+            //3->4
+            document.getElementById('submit').addEventListener('click', function (event) {
+                event.preventDefault(); 
+                // 在這裡處理表單數據
+                const username = document.getElementById('Username').value;
+                const usertype = document.getElementById('Usertype').value;
+                const kg = document.getElementById('kg').value;
+                const more = document.getElementById('more').value;
+
+                var selectedDate = $('#date').val();
+                
+                bookedDates.push(selectedDate);
+                localStorage.setItem('bookedDates', JSON.stringify(bookedDates));
+                var storedDates = JSON.parse(localStorage.getItem('bookedDates'));
+                console.log(storedDates);
+                // 重新初始化日期選擇器 
+                
+            
+                $("#date").datepicker("destroy").datepicker({
+                    dateFormat: 'yy-mm-dd',
+                    beforeShowDay: function (date) {
+                        var string = $.datepicker.formatDate('yy-mm-dd', date);
+                        return [!bookedDates.includes(string), '', bookedDates.includes(string) ? 'reserved-date' : ''];
+                    }
+                });
+
+                // 清除選擇的日期
+                $('#date').val('');
+
+                // 驗證並處理表單數據
+                if (username && usertype) {
+                    console.log("表單已提交:", { username, usertype, kg, more });
+
+                    document.getElementById('form-container').style.display = 'none';
+                    document.getElementById('wash-container').style.display = 'block';
+                    document.getElementById('main-image1').src = './Image/'+ selectedPet + '-dirty.jpg';
+                } else {
+                    alert('請填寫所有必填字段');
+                }
+                switch(kg) {
+                    case '10kg以下':
+                        price = 3000;
+                        break;
+                    case '20kg以下':
+                        price = 4000;
+                        break;
+                    case '30kg以下':
+                        price = 5000;
+                        break;
+                    case '30kg以上':
+                        price = 7000;
+                        break;
+                    case '特寵2kg以下':
+                        price = 0;
+                        break;
+                }
+                //統計
+                let doneContainer = document.getElementById('done-container');
+                    doneContainer.innerHTML = `
+                        <h3>寵物類型:  ${petName}</h3>
+                        <h3>姓名: ${username}</h3>
+                        <h3>品種: ${usertype}</h3>
+                        <h3>公斤: ${kg}</h3>
+                        <h3>備註: ${more}</h3>
+                        <h3>預約日期: ${selectedDate}</h3>
+                        <span>額外服務內容:</span>
+                    `;
+            });
+
+           // Variable to track if cut-option is selected
+    // 4 -> 5
+        document.getElementById('bath-option').addEventListener('click', function () {
+        document.getElementById('wash-container').style.display = 'none';
+        document.getElementById('cut-container').style.display = 'block';
+        document.getElementById('main-image2').src = './Image/' + selectedPet + '-cut.jpg';
+        let doneContainer = document.getElementById('done-container');
+        doneContainer.innerHTML += '<span> 洗澡(+$100)、</span>';
+        price += 100;  
+        cutOptionSelected = true; // Set to true when bath-option is clicked
+        noWashOptionSelected = false; // Reset no wash option
+    });
+
+    document.getElementById('no-option1').addEventListener('click', function () {
+        document.getElementById('wash-container').style.display = 'none';
+        document.getElementById('cut-container').style.display = 'block';
+        document.getElementById('main-image2').src = './Image/' + selectedPet + '-dirty.jpg';
+        let doneContainer = document.getElementById('done-container');
+        doneContainer.innerHTML += '<span> 不洗澡、</span>';  
+        cutOptionSelected = false; // Set to false when no-option1 is clicked
+        noWashOptionSelected = true; // Set to true when no-option1 is clicked
+    });
+
+    // 5 -> 6
+    document.getElementById('cut-option').addEventListener('click', function () {
+        document.getElementById('cut-container').style.display = 'none';
+        document.getElementById('hurt-container').style.display = 'block';
+        
+        if (noWashOptionSelected) {
+            document.getElementById('main-image3').src = './Image/' + selectedPet + '-cutt.jpg';
+        } else {
+            document.getElementById('main-image3').src = './Image/' + selectedPet + '-hurt.jpg';
+        }
+
+        let doneContainer = document.getElementById('done-container');
+        doneContainer.innerHTML += '<span> 修剪(+$100)、</span>';
+        price += 100;
+        cutOptionSelected = true; // Set to true when cut-option is clicked
+    });
+
+    document.getElementById('no-option2').addEventListener('click', function () {
+        document.getElementById('cut-container').style.display = 'none';
+        document.getElementById('hurt-container').style.display = 'block';
+        
+        // Keep the cut image if bath-option was selected
+        if (cutOptionSelected) {
+            document.getElementById('main-image3').src = './Image/' + selectedPet + '-cut.jpg';
+        } else {
+            document.getElementById('main-image3').src = './Image/' + selectedPet + '-dirty.jpg';
+        }
+
+        let doneContainer = document.getElementById('done-container');
+        doneContainer.innerHTML += '<span> 不修剪、</span>';
+    });
+
+    // Other navigation logic
+    /*document.getElementById('next-button').addEventListener('click', function () {
+        document.getElementById('container').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+    });
+
+    document.getElementById('confirm-button').addEventListener('click', function () {
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('form-container').style.display = 'block';
+    });
+
+    document.getElementById('back-page').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+    });
+
+    document.getElementById('submit').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('wash-container').style.display = 'block';
+    });
+
+    document.getElementById('payButton').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById('pay-container').style.display = 'block';
+        document.getElementById('done-container').style.display = 'none';
+    });*/
+
+    
+
+ //6->統計
+document.getElementById('hurt-option').addEventListener('click', function () {
+        document.getElementById('hurt-container').style.display = 'none';
+        document.getElementById('done-container').style.display = 'block';
+        let doneContainer = document.getElementById('done-container');
+        doneContainer.innerHTML += '<span> 修復(+$200)</span>';
+        price += 200;
+        
+        doneContainer.innerHTML += '<h3> 價錢:$' + price + '</h3>';
+        doneContainer.innerHTML += '<br><button id="payButton">結帳</button></br>';
+        setTimeout(function() {
+            document.getElementById('payButton').addEventListener('click', function() {
+                document.getElementById('done-container').style.display = 'none';
+                document.getElementById('pay-container').style.display = 'block';
+                document.getElementById('money').textContent = '合計: $' + price;
+            });
+        }, 0); 
+
+    });
+
+    document.getElementById('no-option3').addEventListener('click', function () {
+        document.getElementById('hurt-container').style.display = 'none';
+        document.getElementById('done-container').style.display = 'block';
+        
+        
+        let doneContainer = document.getElementById('done-container');
+        doneContainer.innerHTML += '<span> 不修復</span>';
+        doneContainer.innerHTML += '<h3> 價錢:$' + price + '</h3>';
+        doneContainer.innerHTML += '<br><button id="payButton">結帳</button></br>';
+        setTimeout(function() {
+            document.getElementById('payButton').addEventListener('click', function() {
+                document.getElementById('done-container').style.display = 'none';
+                document.getElementById('pay-container').style.display = 'block';
+                document.getElementById('money').textContent = '合計: $' + price;
+            });
+        }, 0); 
+
+    });
+
+    document.getElementById('confirmButton').addEventListener('click', function() {
+                alert('付款成功');
+                document.getElementById('pay-container').style.display = 'none';
+                document.getElementById('container').style.display = 'block'
+                // 清空
+                var inputs = document.getElementsByTagName('input');
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].value = '';
+                }
+                document.getElementById('more').value = '';
+            });
+        });
+        
+    /*
+            //4->5
+            document.getElementById('bath-option').addEventListener('click', function () {
+                
+                document.getElementById('wash-container').style.display = 'none';
+                document.getElementById('cut-container').style.display = 'block';
+                document.getElementById('main-image2').src = './Image/'+ selectedPet + '-cut.jpg';
+                let doneContainer = document.getElementById('done-container');
+                doneContainer.innerHTML += '<span> 洗澡(+$100)、</span>';
+                price+=100;  
+            });
+            document.getElementById('no-option1').addEventListener('click', function () {
+                document.getElementById('wash-container').style.display = 'none';
+                document.getElementById('cut-container').style.display = 'block';
+                document.getElementById('main-image2').src = './Image/'+ selectedPet + '-dirty.jpg';
+                let doneContainer = document.getElementById('done-container');
+                doneContainer.innerHTML += '<span> 不洗澡、</span>';  
+            });
+            //5->6
+            document.getElementById('cut-option').addEventListener('click', function () {
+                document.getElementById('cut-container').style.display = 'none';
+                document.getElementById('hurt-container').style.display = 'block';
+                document.getElementById('main-image3').src = './Image/'+ selectedPet + '-hurt.jpg';
+                let doneContainer = document.getElementById('done-container');
+                doneContainer.innerHTML += '<span> 修剪(+$100)、</span>';
+                price += 100;
+            });
+            document.getElementById('no-option2').addEventListener('click', function () {
+                document.getElementById('cut-container').style.display = 'none';
+                document.getElementById('hurt-container').style.display = 'block';
+                document.getElementById('main-image3').src = './Image/'+ selectedPet + '-dirty.jpg';
+                let doneContainer = document.getElementById('done-container');
+                doneContainer.innerHTML += '<span> 不修剪、</span>';
+            });
+            //6->統計
+            document.getElementById('hurt-option').addEventListener('click', function () {
+                document.getElementById('hurt-container').style.display = 'none';
+                document.getElementById('done-container').style.display = 'block';
+                let doneContainer = document.getElementById('done-container');
+                doneContainer.innerHTML += '<span> 修復(+$200)</span>';
+                price += 200;
+                doneContainer.innerHTML += '<h3> 價錢:$' + price +'</h3>';
+                doneContainer.innerHTML += '<br><button id="payButton">結帳</button></br>';
+                setTimeout(function() {
+                    document.getElementById('payButton').addEventListener('click', function() {
+                        document.getElementById('done-container').style.display = 'none';
+                        document.getElementById('pay-container').style.display = 'block';
+                        document.getElementById('money').textContent = '合計: $'+price;
+                    });
+                }, 1000);
+            });
+            document.getElementById('no-option3').addEventListener('click', function () {
+                document.getElementById('hurt-container').style.display = 'none';
+                document.getElementById('done-container').style.display = 'block';
+                let doneContainer = document.getElementById('done-container');
+                doneContainer.innerHTML += '<span> 不修復</span>';
+                doneContainer.innerHTML += '<h3> 價錢:$' + price +'</h3>';
+                doneContainer.innerHTML += '<br><button id="payButton">結帳</button></br>';
+                setTimeout(function() {
+                    document.getElementById('payButton').addEventListener('click', function() {
+                        document.getElementById('done-container').style.display = 'none';
+                        document.getElementById('pay-container').style.display = 'block';
+                        document.getElementById('money').textContent = '合計: $'+price;
+                    });
+                }, 1000);
+            });
+            
+            document.getElementById('confirmButton').addEventListener('click', function() {
+                alert('付款成功');
+                document.getElementById('pay-container').style.display = 'none';
+                document.getElementById('container').style.display = 'block'
+                // 清空
+                var inputs = document.getElementsByTagName('input');
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].value = '';
+                }
+                document.getElementById('more').value = '';
+            });
+ 
+        });*/
+
+       
+    
+
+
+        //tooltip
+        $(document).ready(function() {
+
+            $("#hurt-option").mouseover(function() {
+                $("#explain").dialog("open");
+            });
+            $("#hurt-option").mouseout(function() {
+                $("#explain").dialog("close");
+            });
+            $("#explain").dialog({
+                autoOpen: false,
+                closeOnEscape: false,
+                width:600,
+                height:'auto',
+                open: function(event, ui) {
+                    $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

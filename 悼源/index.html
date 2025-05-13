@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悼源</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #55b6f7, #c2e9fb,rgb(24, 208, 249));
+        animation: animateBG 6s ease infinite;
+        background-size: 200%;
+        overflow: hidden;
+        font-family: "Noto Serif TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    @keyframes animateBG{
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+    @keyframes fadeIn{
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    #h11{
+        color: white;
+        text-align: center;
+        margin-bottom: 5%;
+        font-size: 3rem;
+    }
+    h1{
+        font-size: 40px;
+        color: #125ea1;
+        margin-right: 20px;
+    }
+    p{
+        color: white;
+        font-size: 2rem;
+    }
+    .idea{
+        text-align: center;
+    }
+    .container{
+    width: 100%;
+    height: 80%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    animation: fadeIn 3s ease-in;
+    }
+    nav{
+        height: 10%;
+        width: 100%;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        padding:0px 20px; 
+    }
+    .navItem01{
+        display: flex;
+        align-items: center;
+    }
+    a{
+        margin-left: 60px;
+        text-decoration: none;
+        color: #125ea1;
+        display: flex;
+        align-items: center;
+        height: 100%;   
+        padding: 10px 20px;
+    }
+    a:hover{
+        background-color: white;
+    }
+    #first{
+        margin-left: auto;
+    }
+
+</style>
+<body>
+    <div>
+        <nav>
+            <div class="navItem01">
+                <h1>悼源</h1>
+                <img src="./Image/LOGO.png" alt="" height="100px" width="100px">
+            </div>
+            <a id="first" href="./index.html">首頁</a>
+            <a href="./QA.html">水化科普</a>
+            <a href="./new.html">禮儀服務</a>
+            <a href="./form.html">線上追思</a>
+        </nav>
+    </div>
+    <div class="container">
+        <h1 id="h11">創設理念</h1>
+        <div class="idea">
+            <p>與一般火化不盡相同，使用較環保且較溫和的水解方式來送毛小孩最後一程</p>
+            <p>『一群熱愛毛小孩，並希望好好送牠們最後一程的年輕人』</p>
+            <p>透過完整的服務模擬，希望能將水化相關知識帶給每一位想了解水化喪葬服務的人</p>
+            <p>因為人與寵物最大不同在於</p>
+            <p>寵物一生只跟著飼主，祂對於飼主的執著度比我們想像的還高</p>
+            <p>而我們的存在就是希望大家在送他們最後一程時</p>
+            <p>能考慮到一些不同的方式來給予寵物一個善終並放下執念</p>
+            <p>在這個中心思想下，我們成立了悼源</p>
+        </div>
+    </div>
+</body>
+</html>
