@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紀念牆</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="">
+    <style>
+        *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #55b6f7, #c2e9fb,rgb(24, 208, 249));
+        animation: animateBG 6s ease infinite;
+        background-size: 200%;
+        overflow: hidden;
+        font-family: "Noto Serif TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    @keyframes animateBG{
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+    @keyframes fadeIn{
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    @keyframes animatemodalBG{
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+    h1{
+        font-size: 40px;
+        color: #125ea1;
+        margin-right: 20px;
+    }
+    nav{
+        height: 10%;
+        width: 100%;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        padding:0px 20px; 
+    }
+    .navItem01{
+        display: flex;
+        align-items: center;
+    }
+    a{
+        margin-left: 60px;
+        text-decoration: none;
+        color: #125ea1;
+        display: flex;
+        align-items: center;
+        height: 100%;   
+        padding: 10px 20px;
+    }
+    a:hover{
+        background-color: white;
+    }
+    #first{
+        margin-left: auto;
+    }
+    .container {
+            width: 100%;
+            height: 80%;
+            padding: 50px;
+            border-radius: 30px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 1s ease-in;
+        }
+    .gallery{
+        width: 70%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .photo{
+        position: relative;
+        width: 10%;
+        height: 100%;
+        border-radius: 20px;
+        background-size: cover; 
+        background-position: center;
+        opacity: 0.5;
+        transition: width 1s,opacity 2s,bottom 2s;
+        -webkit-box-reflect:below 3px linear-gradient(transparent,#0009);
+    }
+    .photo:nth-child(1){
+        background-image: url('./Image/boma1.jpg');
+    }
+    .photo:nth-child(2){
+        background-image: url('./Image/shiba1.jpg');
+    }
+    .photo:nth-child(3){
+        background-image: url('./Image/giwawa1.jpg');
+    }
+    .photo:nth-child(4){
+        background-image: url('./Image/bird1.jpg');
+    }
+    .photo:nth-child(5){
+        background-image: url('./Image/cat1.jpg');
+    }
+    .photo:nth-child(6){
+        background-image: url('./Image/boma1.jpg');
+    }
+    .photo:nth-child(7){
+        background-image: url('./Image/MOUSE1.jpg');
+    }
+    .photo:hover{
+        cursor: pointer;
+        opacity: 1;
+        width: 100%;
+        height: 200%;
+        bottom: 10%;
+        background-position: top;
+    }
+    .modal{
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        justify-content: center;
+        align-items: center;
+       background: linear-gradient(360deg,#c5d5faa1, #fcdef4a0,  #c3dc99a5);
+        animation: animateBG 6s ease infinite;
+        background-size: 200%;
+    
+    }
+    .modalBody{
+        width: 40%;
+        height: 60%;
+        background-size: cover;
+        opacity: 0.5;
+        transition: opacity 1s;
+    }
+    .fade{
+        opacity: 1;
+    }
+    .text-container {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        color: rgb(0, 0, 0);
+        font-family: Arial, sans-serif;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+    .text-container.show {
+        opacity: 0.8;
+        font-size: 40px;
+    }
+    #h11{
+        text-align: center;
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <nav>
+            <div class="navItem01">
+                <h1>悼源</h1>
+                <img src="./Image/LOGO.png" alt="" height="100px" width="100px">
+            </div>
+            <a id="first" href="./index.html">首頁</a>
+            <a href="./QA.html">水化科普</a>
+            <a href="./new.html">禮儀服務</a>
+            <a href="./form.html">線上追思</a>
+        </nav>
+    </div>
+    <div class="container">
+        <h1 id="h11">紀念牆</h1>
+        <div class="gallery">
+            <!-- 第一張照片 -->
+            <div class="photo"></div>
+            <div class="photo" data-pet-name="Chacha" data-pet-memory="在天堂一定要過得好好的"></div>
+            <div class="photo" data-pet-name="Mison" data-pet-memory="我一定會想你的"></div>
+            <div class="photo" data-pet-name="Queen" data-pet-memory="我愛你寶貝"></div>
+            <div class="photo" data-pet-name="Wawa" data-pet-memory="沒有人可以取代你"></div>
+            <div class="photo" data-pet-name="Noya" data-pet-memory="你是我最重要的寶貝"></div>
+            <div class="photo" data-pet-name="Apple" data-pet-memory="快回來吧 我迫不及待想等你回來了"></div>
+        </div>
+
+        <div id="text-container" class="text-container">
+            <div class="pet-name"></div>
+            <div class="pet-memory"></div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div id="modalbody" class="modalBody"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const firstPhoto = document.querySelector('.photo:first-child');
+            const modalBody = document.getElementById('modalbody');
+            const textContainer = document.getElementById('text-container');
+            const petNameElement = document.querySelector('.pet-name');
+            const petMemoryElement = document.querySelector('.pet-memory');
+
+            
+            const petName = localStorage.getItem('pet_name');
+            const petMemory = localStorage.getItem('pet_memory');
+            const petPhoto = localStorage.getItem('pet_photo');
+
+            // 第一張照片的屬性和背景圖片
+            firstPhoto.setAttribute('data-pet-name', petName);
+            firstPhoto.setAttribute('data-pet-memory', petMemory);
+            firstPhoto.style.backgroundImage = `url(${petPhoto})`;
+
+            petNameElement.textContent = petName;
+            petMemoryElement.textContent = petMemory;
+
+            // 相片點擊事件處理
+            const photos = document.querySelectorAll('.photo');
+            photos.forEach((photo, index) => {
+                photo.addEventListener('click', function () {
+                    modal.style.display = 'flex';
+                    modalBody.style.backgroundImage = window.getComputedStyle(this).backgroundImage;
+                    modalBody.classList.toggle('fade');
+
+                    if (index === 0) {
+                        // 用 localStorage 中的數據更新第一張照片的信息
+                        const petName = localStorage.getItem('pet_name');
+                        const petMemory = localStorage.getItem('pet_memory');
+                        const petPhoto = localStorage.getItem('pet_photo');
+
+                        petNameElement.textContent = petName;
+                        petMemoryElement.textContent = petMemory;
+
+                        this.style.backgroundImage = `url(${petPhoto})`;
+                    } else {
+                        const petName = this.getAttribute('data-pet-name');
+                        const petMemory = this.getAttribute('data-pet-memory');
+
+                        petNameElement.textContent = petName;
+                        petMemoryElement.textContent = petMemory;
+                    }
+
+                    textContainer.classList.add('show');
+                });
+            });
+
+            // 點擊非模態框區域時關閉模態框
+            window.addEventListener('click', function (e) {
+                if (e.target == modal) {
+                    modal.style.display = 'none';
+                    modalBody.classList.toggle('fade');
+                    textContainer.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
