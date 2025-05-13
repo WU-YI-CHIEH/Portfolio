@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            overflow: auto;
+            font-size: larger;
+            position: fixed;
+            z-index: 1000; /* 確保 header 在其他元素上面顯示 */
+        }
+        header img {
+            float: left;
+            
+        }
+
+        .background-img {
+            background-image: url('狗狗收容所.jpg'); 
+            filter: brightness(50%);
+            background-size: cover;
+            padding: 150px; 
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            background-position: center;
+        }
+
+        h1 {
+            color:black;
+            font-size: 100px;
+            margin-left: 20%;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h2 {
+            color: black;
+            font-size: 100px;
+            margin-left: 40%;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .動機{
+            background-image: url('動機.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            font-size: 50px;
+            padding: 200px;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(255, 255, 255);
+            background-position: center;
+            
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 0px;
+        }
+
+        section h3 {
+            margin-bottom: 20px;
+        }
+        #contact{
+            text-align: center;
+            background-color: antiquewhite;
+            height: 500px;
+        }
+        h4{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 50px;
+            color: rgb(0, 0, 0);
+            opacity: 0; /* 設置初始透明度為0，隱藏內容 */
+            transform: translateY(20px); /* 向上位移一段距離 */
+            animation: fadeInUp 7s forwards;
+            text-align: center;
+        }
+        .跑馬燈{
+            background-color:#B2BFBF;
+        }
+        #goToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            padding: 10px;
+            background-color: #ffffff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 5px; 
+        }
+        .personal{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap; /* 防止換行 */
+            overflow-x: auto;
+            background-color: grey;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        .profile-img {
+            width: 200px; 
+            height: 300px; 
+            display: block;
+            object-fit: cover;
+        }
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+  
+        }
+        figcaption {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        h6{
+            font-size: 25px;
+            
+        }
+        #aaa {
+            background-color:gray ;
+            font-family: 'Times New Roman', Times, serif;
+            opacity: 0; /* 設置初始透明度為0，隱藏內容 */
+            transform: translateY(20px); /* 向上位移一段距離 */
+            animation: fadeInUp 7s forwards;
+        }
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 0px;
+            font-size: 20px;
+            align-items: center;
+        }
+
+        .circle {
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            overflow: hidden; /* 隱藏圓形外的內容 */
+            margin: 0 10px; /* 控制圓形之間的間距 */
+            text-align: center;
+        }
+
+        .circle img {
+            width: 100%; /* 使圖片充滿圓形 */
+            height: auto; /* 保持圖片比例 */
+            border-radius: 50%; /* 讓圖片也是圓形 */
+            object-fit: cover; /* 填滿整個圓形，可能會裁剪部分圖片 */
+        }
+        .circle-content{
+            text-align: center;
+        }
+        h7 {
+            
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px; /* 新增的 margin-bottom 以適應新的排列 */
+}
+.fk{
+    text-align: center;
+}
+#fk2{
+    background-color: #b4b1b1;
+}
+#fkm{
+    background-color: antiquewhite;
+}
+h3{
+    font-size: 30px;
+}
+.hehe{
+    display: flex;
+    
+}
+#donate{
+    text-align: center;
+    background-color: rgb(241, 237, 187);
+}
+h9{
+    font-size: 25px;
+}
+.donationItem{
+    display: flex;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="浪，生命不斷線.png" alt="Home" width="350" height="80"></a>
+        <div class="top">
+        <nav>
+          <ul>
+            <li><a href="#fkm">募資個案</a></li>
+            <li><a href="#donate">募款連結</a></li>
+            <li><a href="#aaa">關於我們</a></li>
+            <li><a href="#contact">我要捐款</a></li>
+          </ul>
+        </nav>
+    </div>
+      </header>
+      <section id="fk2">
+        <div class="background-img">
+            <h1>浪 ,</h1>
+            <h2>生命不斷線</h2>
+        </div>
+        <div class="動機">
+            <p1>社會中有很多關於流浪動物的議題，
+                <br>
+                <br>
+                因此我們希望透過這次機會來為浪浪
+                <br>
+                <br>
+                們盡一份心力，給予他們新的生命。</p1>
+        </div>
+        <div class="標語">
+            <h4>他們需要您的幫助!!!</h4>
+        </div>
+        <div>
+            <video width="100%" height="50%" controls>
+                <source src="影片.mp4" type="video/mp4">
+            </video>
+        </div>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <section id="fkm">
+        <br>
+      <div class="fk"><h7>募資個案</h7></div>
+      <div class="circle-container">
+        <div class="circle">
+            <div class="circle-content">
+            <a href="./white.html"><img src="小白.png" alt="Image 1">
+            </a><p>小白</p>
+        </div>
+    </div>
+        <div class="circle">
+            <div class="circle-content">
+            <a href="./yellow.html"><img src="小黃.png" alt="Image 2">
+            </a><p>小黃</p>
+        </div>
+    </div>
+        <div class="circle">
+            <div class="circle-content">
+            <a href="./wei.html"><img src="威帥.jpg" alt="Image 3">
+            </a><p>威帥</p>
+        </div>
+    </div>
+    </div>
+</section>
+<section id="donate">
+    <br>
+    <br>
+    <div class="yoyo"><h9>募款連結</h9>
+    <div class="hehe">
+        <a href="#contact"><img src="狗糧.gif"width="500px" ></a>
+        <a href="#contact"><img src="錢錢.gif"width="500px" ></a>
+        <a href="#contact"><img src="骨頭.gif"width="600px" ></a>
+    </div>
+</div>
+</section>
+<br>
+<br>
+<hr>
+      <section id="aaa">
+        
+        <h6 style="text-align: center;">關於我們</h6>
+            <div class="personal">
+              <figure>
+                <img class="profile-img" src="蘇芯琳.jpg">
+                <figcaption>蘇芯琳</figcaption>
+                <p8>台灣的流浪狗在我們看不到的各個角落中，面臨著眾多的困難。為了改善流浪狗的生活，我們透過網站呼籲捐款，希望能引起更多人對流浪犬的關注。讓我們共同努力，讓這些流浪狗擁有更舒適健康的生活環境。</p8>
+              </figure>
+              <figure>
+                <img class="profile-img" src="芊芊.jpg">
+                <figcaption>芊芊</figcaption>
+                <p8>平常在瀏覽社群媒體時會看到很多關於動物的影片，在這些影片的背後也有不少動物被流放在外頭。希望藉由募款及蒐集物資的方式，幫助這些浪浪們擁有溫飽的三餐和溫暖的家。</p8>
+              </figure>
+              <figure>
+                <img class="profile-img" src="伊翎何.jpg">
+                <figcaption>何伊翎</figcaption>
+                <p8>很多流浪動物因為受傷或是生病需要資金治療，也需要糧食以及臨時的住所，希望能夠透過募款的方式來幫助這些浪浪，讓他們能夠健康成長有著溫暖的生活環境。</p8>
+              </figure>
+              <figure>
+                <img class="profile-img" src="51j.jpg">
+                <figcaption>伍奕潔</figcaption>
+                <p8>平常在FB和YouTube上常常出現流浪狗園的廣告，每次看到都覺得那些狗園飼主很偉大，不僅要照顧幾百隻浪浪的生活起居，還要為了龐大的飼養費用苦惱。這讓我想藉由製作流浪動物網站來將流浪動物的議題散播出去，讓更多人關注到台灣的流浪狗需要大家的幫助。</p8>
+              </figure>
+              <figure>
+                <img class="profile-img" src="lby.jpg">
+                <figcaption>李柏逸</figcaption>
+                <p8>我深信每一隻狗狗都有權利擁有一個溫馨的家，而我們的目標就是為這些流浪動物提供一個第二次機會，讓他們能夠重新感受到人類的愛和關懷。透過志工的參與，我們不僅能夠改變這些動物的命運，更能向社會大眾傳達愛護動物的重要性。</p8>
+              </figure> 
+            </div>
+          </section>
+      <section id="contact">
+        <h3>我要捐款</h3>
+        <p>銀行名稱：浪浪銀行
+            <br>
+            銀行代號：999
+            <br>
+            戶名：浪浪們的金錢口袋
+            <br>
+            帳號：23102xxxxxxxxx：</p>
+            <hr>
+        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+          <label for="name">姓名：</label>
+          <input type="text" id="name" name="name" required><br>
+          <label for="email">Email：</label>
+          <input type="text" id="name" name="name" required><br>
+          <label for="phone">電話：</label>
+          <input type="email" id="email" name="email" required><br>
+          <label for="phone">帳號末五碼：</label>
+          <input type="email" id="email" name="email" required><br>
+          <label for="donationItem">捐款品項：</label><br>
+          <input type="radio" id="food" name="donationItem" value="狗糧">
+          <label for="food">狗糧</label>
+          <input type="radio" id="money" name="donationItem" value="現金">
+          <label for="money">現金</label>
+          <input type="radio" id="bone" name="donationItem" value="骨頭">
+          <label for="bone">骨頭</label><br>
+          <label for="message">傳達給浪浪們的話：</label><br>
+          <textarea id="message" name="message" required></textarea><br>
+          <input type="submit" value="送出">
+        </form>
+      </section>
+    </body>
+      <button onclick="goToTop()" id="goToTopBtn"><img src="上.jpg"width="30px"height="30px"></button>
+
+    <script>
+        // 滾動到頂部函數
+        function goToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // 平滑滾動效果
+            });
+        }
+
+        // 顯示或隱藏返回頂部按鈕
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var btn = document.getElementById("goToTopBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        }
+    </script>
+    
+      
